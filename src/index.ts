@@ -12,10 +12,12 @@ const inputDos = <HTMLInputElement>document.querySelector('.number-filed');
 function obtenerValores(){
     let valueUno = parseInt(inputUno.value);
     let valueDos = parseInt(inputDos.value);
+    inputUno.value = "";
+    inputDos.value = "";
+    const miCanvas:CanvasLocal = new CanvasLocal(graphics, canvas, valueUno, valueDos);
+    miCanvas.paint();
 }
 
-const miCanvas:CanvasLocal = new CanvasLocal(graphics, canvas);
 
-miCanvas.paint();
 
 document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);

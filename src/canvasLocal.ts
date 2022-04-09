@@ -8,12 +8,11 @@ export class CanvasLocal {
     protected pixelSize: number;
     protected centerX: number;
     protected centerY: number;
-    
         
-    public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement){
+    public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement, rW : number, rH : number){
       this.graphics = g;
-      this.rWidth = 8.0;
-      this.rHeight= 6.0;
+      this.rWidth = rW;
+      this.rHeight= rH;
       this.maxX = canvas.width - 1
       this.maxY = canvas.height - 1;
       this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
