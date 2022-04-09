@@ -15,13 +15,14 @@ function obtenerValores(){
     let valueDos = parseInt(inputDos.value);
     if(valueUno < 0 || valueDos < 0){
         alert("Numeros negativos no  son aceptados");
+        dibujoPorDefecto();
         inputUno.value = "";
         inputDos.value = "";
     }else{
-        inputUno.value = "";
-        inputDos.value = "";
         const miCanvas:CanvasLocal = new CanvasLocal(graphics, canvas, valueUno, valueDos);
         miCanvas.paint();
+        inputUno.value = "";
+        inputDos.value = "";
     }
 }
 
@@ -36,6 +37,6 @@ function dibujoPorDefecto(){
     miCanvas.paint(); 
 }
 
-dibujoPorDefecto();
+//dibujoPorDefecto();
 
-document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);
+//document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);

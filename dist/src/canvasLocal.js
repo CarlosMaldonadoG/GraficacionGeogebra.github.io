@@ -22,6 +22,8 @@ export class CanvasLocal {
         return x * x;
     }
     paint() {
+        this.drawLine(this.iX(-10), this.iY(0), this.iX(10), this.iY(0));
+        this.drawLine(this.iX(0), this.iY(-10), this.iX(0), this.iY(10));
         this.graphics.strokeStyle = 'lightgray';
         for (let j = -10; j <= 10; j += 0.2) {
             let numUno = Number(j.toFixed(1));
