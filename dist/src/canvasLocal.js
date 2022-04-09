@@ -33,5 +33,10 @@ export class CanvasLocal {
         for (let x = -3; x <= 3; x += 0.1) {
             this.drawLine(this.iX(x), this.iY(this.fx(x)), this.iX(x + 0.1), this.iY(this.fx(x + 0.1)));
         }
+        this.graphics.strokeStyle = 'lightgray';
+        for (let j = -10; j <= 10; j += 0.2) {
+            this.drawLine(this.iX(-10), this.iY(j), this.iX(10), this.iY(j));
+            this.drawLine(this.iX(j), this.iY(-10), this.iX(j), this.iY(10));
+        }
     }
 }

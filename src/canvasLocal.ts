@@ -38,7 +38,7 @@ export class CanvasLocal {
         /*this.drawLine(this.iX(-10), this.iY(0), this.iX(10), this.iY(0));
         this.drawLine(this.iX(0), this.iY(-10), this.iX(0), this.iY(10));
         this.drawLine(this.iX(-5), this.iY(0), this.iX(0), this.iY(5));*/
-        
+         
         this.graphics.strokeStyle = 'black';
         for(let i = -10; i <= 10; i++){
           this.drawLine(this.iX(i), this.iY(-10), this.iX(i), this.iY(10));
@@ -46,10 +46,16 @@ export class CanvasLocal {
           this.drawLine(this.iX(-10), this.iY(i), this.iX(10), this.iY(i));
           this.graphics.fillText(i + "", this.iX(-0.2), this.iY(i));
         } 
+        
         this.graphics.strokeStyle = 'red';
         for(let x = -3; x <= 3; x += 0.1){
           this.drawLine(this.iX(x), this.iY(this.fx(x)), this.iX(x + 0.1), this.iY(this.fx(x + 0.1)))
+        }
 
+        this.graphics.strokeStyle = 'lightgray';
+        for(let j = -10; j <= 10; j += 0.2){
+          this.drawLine(this.iX(-10), this.iY(j), this.iX(10), this.iY(j));
+          this.drawLine(this.iX(j), this.iY(-10), this.iX(j), this.iY(10));
         }
     }
 }
