@@ -37,6 +37,6 @@ function dibujoPorDefecto(){
     miCanvas.paint(); 
 }
 
-//dibujoPorDefecto();
+dibujoPorDefecto();
 
-//document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);
+document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);

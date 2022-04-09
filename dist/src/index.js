@@ -31,3 +31,5 @@ function dibujoPorDefecto() {
     const miCanvas = new CanvasLocal(graphics, canvas, valorUnoInicial, valorDosInicial);
     miCanvas.paint();
 }
+dibujoPorDefecto();
+document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);
