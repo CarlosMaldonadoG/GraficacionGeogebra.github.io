@@ -24,4 +24,11 @@ function obtenerValores() {
 function limpiarCanvas() {
     graphics.clearRect(0, 0, canvas.width, canvas.height);
 }
+function dibujoPorDefecto() {
+    let valorUnoInicial = 24;
+    let valorDosInicial = 20;
+    const miCanvas = new CanvasLocal(graphics, canvas, valorUnoInicial, valorDosInicial);
+    miCanvas.paint();
+}
+dibujoPorDefecto();
 document.getElementById('btn-enviar').addEventListener('click', obtenerValores, false);
