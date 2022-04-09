@@ -26,7 +26,7 @@ function limpiarCanvas() {
 }
 function dibujoPorDefecto() {
     let valorUnoInicial = 24;
-    let valorDosInicial = 20;
+    let valorDosInicial = 22;
     const miCanvas = new CanvasLocal(graphics, canvas, valorUnoInicial, valorDosInicial);
     miCanvas.paint();
 }

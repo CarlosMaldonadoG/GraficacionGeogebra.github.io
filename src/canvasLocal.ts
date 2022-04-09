@@ -35,8 +35,11 @@ export class CanvasLocal {
       }
       paint() {
         /*this.drawLine(this.iX(-10), this.iY(0), this.iX(10), this.iY(0));
-        this.drawLine(this.iX(0), this.iY(-10), this.iX(0), this.iY(10));*/
-       
+        this.drawLine(this.iX(0), this.iY(-10), this.iX(0), this.iY(10));
+        for(let z = -10; z <= 10; z++){
+          this.graphics.fillText("" + z,this.iX(z - 0.3), this.iY(-0.5));
+        }*/
+
         this.graphics.strokeStyle = 'lightgray';
         for(let j = -10; j <= 10; j += 0.2){
           let numUno = Number(j.toFixed(1));
@@ -47,11 +50,12 @@ export class CanvasLocal {
         } 
         
         this.graphics.strokeStyle = 'black';
+        this.graphics.fillStyle = 'brown';
         for(let i = -10; i <= 10; i++){
           this.drawLine(this.iX(i), this.iY(-10), this.iX(i), this.iY(10));
-          this.graphics.fillText(i + "", this.iX(i), this.iY(-0.3));
+          this.graphics.fillText("" + i,this.iX(i - 0.3), this.iY(-0.3));
           this.drawLine(this.iX(-10), this.iY(i), this.iX(10), this.iY(i));
-          this.graphics.fillText(i + "", this.iX(-0.2), this.iY(i));
+          this.graphics.fillText("" + i, this.iX(-0.3), this.iY(i - 0.3));
         }
         
         this.graphics.strokeStyle = 'red';

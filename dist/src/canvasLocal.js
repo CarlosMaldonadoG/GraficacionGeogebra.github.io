@@ -31,11 +31,12 @@ export class CanvasLocal {
             }
         }
         this.graphics.strokeStyle = 'black';
+        this.graphics.fillStyle = 'brown';
         for (let i = -10; i <= 10; i++) {
             this.drawLine(this.iX(i), this.iY(-10), this.iX(i), this.iY(10));
-            this.graphics.fillText(i + "", this.iX(i), this.iY(-0.3));
+            this.graphics.fillText("" + i, this.iX(i - 0.3), this.iY(-0.3));
             this.drawLine(this.iX(-10), this.iY(i), this.iX(10), this.iY(i));
-            this.graphics.fillText(i + "", this.iX(-0.2), this.iY(i));
+            this.graphics.fillText("" + i, this.iX(-0.3), this.iY(i - 0.3));
         }
         this.graphics.strokeStyle = 'red';
         for (let x = -3; x <= 3; x += 0.1) {
