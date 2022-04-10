@@ -33,6 +33,7 @@ export class CanvasLocal {
             }
         }
         this.graphics.strokeStyle = 'black';
+        this.graphics.font = 'bold 11px serif';
         this.graphics.fillStyle = 'brown';
         for (let i = -10; i <= 10; i++) {
             this.drawLine(this.iX(i), this.iY(-10), this.iX(i), this.iY(10));
