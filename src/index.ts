@@ -13,6 +13,13 @@ function obtenerValores(){
     limpiarCanvas();
     let valueUno = parseInt(inputUno.value);
     let valueDos = parseInt(inputDos.value);
+    if(inputUno.value === '' || inputDos.value === ''){
+        valueUno = 24;
+        valueDos = 22;
+    }else{
+        valueUno = valueUno;
+        valueDos = valueDos;
+    }
     if(valueUno < 0 || valueDos < 0){
         alert("Numeros negativos no  son aceptados");
         dibujoPorDefecto();
