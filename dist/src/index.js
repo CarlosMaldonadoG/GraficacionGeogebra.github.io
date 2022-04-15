@@ -19,7 +19,6 @@ function obtenerValores() {
     }
     if (valueUno < 0 || valueDos < 0) {
         alert("Numeros negativos no  son aceptados");
-        dibujoPorDefecto();
         inputUno.value = "";
         inputDos.value = "";
     }
@@ -34,8 +33,8 @@ function limpiarCanvas() {
     graphics.clearRect(0, 0, canvas.width, canvas.height);
 }
 function dibujoPorDefecto() {
-    let valorUnoInicial = 24;
-    let valorDosInicial = 22;
+    let valorUnoInicial = 22;
+    let valorDosInicial = 20;
     const miCanvas = new CanvasLocal(graphics, canvas, valorUnoInicial, valorDosInicial);
     miCanvas.paint();
 }

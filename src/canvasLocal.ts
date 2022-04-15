@@ -8,7 +8,7 @@ export class CanvasLocal {
     protected pixelSize: number;
     protected centerX: number;
     protected centerY: number;
-        
+    
     public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement, rW : number, rH : number){
       this.graphics = g;
       this.rWidth = rW;
@@ -30,35 +30,43 @@ export class CanvasLocal {
         this.graphics.closePath();
         this.graphics.stroke();
       }
+
       fx(x : number): number{
         return x * x;
       }
-      paint() {
-        this.drawLine(this.iX(-10), this.iY(0), this.iX(10), this.iY(0));
-        this.drawLine(this.iX(0), this.iY(-10), this.iX(0), this.iY(10));
      
+      paint() {   
+        let numAinicial : number;
+        let aY : number;
+        let bY : number;
+  
+        let res = ((this.rHeight % 2) == 0) ? numAinicial = this.rHeight : numAinicial = this.rHeight -1;
+        
+        aY = numAinicial / -2;
+        bY = numAinicial / 2;
+
         this.graphics.strokeStyle = 'lightgray';
-        for(let j = -10; j <= 10; j += 0.2){
+        for(let j = aY; j <= bY; j += 0.2){
           let numUno = Number(j.toFixed(1));
           if(!(Number.isInteger(numUno))){
-            this.drawLine(this.iX(-10), this.iY(numUno), this.iX(10), this.iY(numUno));
-            this.drawLine(this.iX(numUno), this.iY(-10), this.iX(numUno), this.iY(10));
+            this.drawLine(this.iX(aY), this.iY(numUno), this.iX(bY), this.iY(numUno));
+            this.drawLine(this.iX(numUno), this.iY(aY), this.iX(numUno), this.iY(bY));
           }
         } 
         
         this.graphics.strokeStyle = 'black';
-        this.graphics.font = 'bold 11px serif';
         this.graphics.fillStyle = 'brown';
-        for(let i = -10; i <= 10; i++){
-          this.drawLine(this.iX(i), this.iY(-10), this.iX(i), this.iY(10));
+        for(let i = aY; i <= bY; i++){
+          this.drawLine(this.iX(i), this.iY(aY), this.iX(i), this.iY(bY));
           this.graphics.fillText("" + i,this.iX(i - 0.3), this.iY(-0.3));
-          this.drawLine(this.iX(-10), this.iY(i), this.iX(10), this.iY(i));
+          this.drawLine(this.iX(aY), this.iY(i), this.iX(bY), this.iY(i));
           this.graphics.fillText("" + i, this.iX(-0.3), this.iY(i - 0.3));
         }
         
         this.graphics.strokeStyle = 'red';
         for(let x = -3; x <= 3; x += 0.1){
-          this.drawLine(this.iX(x), this.iY(this.fx(x)), this.iX(x + 0.1), this.iY(this.fx(x + 0.1)))
+          let x2 = Number(x.toFixed(1));
+          this.drawLine(this.iX(x2), this.iY(this.fx(x2)), this.iX(x2 + 0.1), this.iY(this.fx(x2 + 0.1)));
         }
     }
 }
