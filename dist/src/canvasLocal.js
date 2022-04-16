@@ -22,27 +22,36 @@ export class CanvasLocal {
         return x * x;
     }
     paint() {
-        let numAinicial;
+        let numHeight;
+        let numWidth;
         let aY;
-        let bY;
-        let res = ((this.rHeight % 2) == 0) ? numAinicial = this.rHeight : numAinicial = this.rHeight - 1;
-        aY = numAinicial / -2;
-        bY = numAinicial / 2;
+        let aX;
+        let resY = ((this.rHeight % 2) == 0) ? numHeight = this.rHeight : numHeight = this.rHeight - 1;
+        let resX = ((this.rWidth % 2) == 0) ? numWidth = this.rWidth : numWidth = this.rWidth - 1;
+        aY = numHeight / 2;
+        aX = numWidth / 2;
         this.graphics.strokeStyle = 'lightgray';
-        for (let j = aY; j <= bY; j += 0.2) {
-            let numUno = Number(j.toFixed(1));
-            if (!(Number.isInteger(numUno))) {
-                this.drawLine(this.iX(aY), this.iY(numUno), this.iX(bY), this.iY(numUno));
-                this.drawLine(this.iX(numUno), this.iY(aY), this.iX(numUno), this.iY(bY));
+        for (let g = -aX; g <= aX; g += 0.2) {
+            g = Number(g.toFixed(1));
+            if (!(Number.isInteger(g))) {
+                this.drawLine(this.iX(g), this.iY(-aY), this.iX(g), this.iY(aY));
+            }
+        }
+        for (let h = -aY; h <= aY; h += 0.2) {
+            h = Number(h.toFixed(1));
+            if (!(Number.isInteger(h))) {
+                this.drawLine(this.iX(-aX), this.iY(h), this.iX(aX), this.iY(h));
             }
         }
         this.graphics.strokeStyle = 'black';
         this.graphics.fillStyle = 'brown';
-        for (let i = aY; i <= bY; i++) {
-            this.drawLine(this.iX(i), this.iY(aY), this.iX(i), this.iY(bY));
+        for (let i = -aX; i <= aX; i++) {
+            this.drawLine(this.iX(i), this.iY(-aY), this.iX(i), this.iY(aY));
             this.graphics.fillText("" + i, this.iX(i - 0.3), this.iY(-0.3));
-            this.drawLine(this.iX(aY), this.iY(i), this.iX(bY), this.iY(i));
-            this.graphics.fillText("" + i, this.iX(-0.3), this.iY(i - 0.3));
+        }
+        for (let j = -aY; j <= aY; j++) {
+            this.drawLine(this.iX(-aX), this.iY(j), this.iX(aX), this.iY(j));
+            this.graphics.fillText("" + j, this.iX(-0.3), this.iY(j - 0.3));
         }
         this.graphics.strokeStyle = 'red';
         for (let x = -3; x <= 3; x += 0.1) {

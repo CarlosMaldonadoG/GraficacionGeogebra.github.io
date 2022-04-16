@@ -19,22 +19,23 @@ function obtenerValores() {
     }
     if (valueUno < 0 || valueDos < 0) {
         alert("Numeros negativos no  son aceptados");
+        dibujoPorDefecto();
         inputUno.value = "";
         inputDos.value = "";
     }
     else {
-        const miCanvas = new CanvasLocal(graphics, canvas, valueUno, valueDos);
-        miCanvas.paint();
         inputUno.value = "";
         inputDos.value = "";
+        const miCanvas = new CanvasLocal(graphics, canvas, valueUno, valueDos);
+        miCanvas.paint();
     }
 }
 function limpiarCanvas() {
     graphics.clearRect(0, 0, canvas.width, canvas.height);
 }
 function dibujoPorDefecto() {
-    let valorUnoInicial = 22;
-    let valorDosInicial = 20;
+    let valorUnoInicial = 20;
+    let valorDosInicial = 18;
     const miCanvas = new CanvasLocal(graphics, canvas, valorUnoInicial, valorDosInicial);
     miCanvas.paint();
 }
