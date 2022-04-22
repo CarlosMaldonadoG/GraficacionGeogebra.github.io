@@ -1,42 +1,7 @@
 #footer{
-    background: linear-gradient(0deg,#1c3643,#273b47 25%,#1e5372);
-  }
+  background: linear-gradient(0deg,#1c3643,#273b47 25%,#1e5372);
+}
 
 #footer a{
-    color: #FFFFFF;
-  }
-.elementos-medio{
- width: 100%;
- height: 100%;
- display: grid;
- grid-template-columns: auto 80%; 
+  color: #FFFFFF;
 }
-.tools{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.field-number, .number-filed{
-  width: 57px;
-  height: 25px;
-  border: 0;
-  border-bottom: 3px solid black;
-  background: transparent;
-  margin: 10px;
-  font-family: 'Courier New', Courier, monospace;  
-}
-.label-Uno, .label-Dos{
-  border: 0;
-  border-bottom: 3px solid black
-}
-#btn-enviar{
-  width: 60px;
-  height: 40px;
-  border: 2px solid black;
-  border-radius: 4px;
-  margin: 10px;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
