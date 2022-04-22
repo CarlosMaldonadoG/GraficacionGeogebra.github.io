@@ -14,11 +14,11 @@ export class CanvasLocal {
   public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement){
     this.graphics = g;
     this.rWidth = 12;
-    this.rHeight= 8;
+    this.rHeight= 12;
     this.maxX = canvas.width - 1
     this.maxY = canvas.height - 1;
     this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
-    this.centerX = this.maxX/12;
+    this.centerX = this.maxX/16;
     this.centerY = this.maxY/8*7;
   }
 
@@ -79,10 +79,11 @@ export class CanvasLocal {
   paint() {
     //let h: number[] = [420, 100, 160, 20];
     //let h: number[] = [1150, 1780, 860, 1260];
-    let h: number[] = [27, 10, 16, 2];
+    let h: number[] = [27, 10, 16, 2, 50, 33];
     let maxEsc: number;
     let colors: string[]= ['magenta', 'red', 'green', 'yellow'];
-
+    let xLar = h.length * 2;
+    console.log(xLar)
     maxEsc = this.maxH(h);
     this.graphics.strokeStyle = 'black';
     this.drawLine(this.iX(0), this.iY(0), this.iX(8), this.iY(0));
@@ -98,7 +99,8 @@ export class CanvasLocal {
     }
     this.graphics.strokeStyle = 'black';
     let ind = 0;
-    for (let i = 0.5; i <=8; i += 2){
+    let incremento = 8 / h.length;
+    for (let i = 0.5; i <= 12; i += 2){
       //this.graphics.strokeStyle = colors[ind];
       this.graphics.fillStyle = colors[ind];
       //console.log(this.rHeight*h[ind]/maxEsc)
@@ -109,18 +111,27 @@ export class CanvasLocal {
       this.drawRmboide(this.iX(i + 1), this.iY(6 * h[ind] / maxEsc-0.1), this.iX(i + 1.3), this.iY(6 * h[ind] / maxEsc + 0.2),
                       this.iX(i+1.3), this.iY(0.4), this.iX(i+1), this.iY(0.1), colors[ind]) ;
       ind++;
+      /*if(ind === 4){
+        ind = 0;
+      }*/
     }
     ind=0
     for (let x = 0; x < 8; x += 2) {
       this.graphics.strokeText(colors[ind++], this.iX(x+0.5), this.iY(-0.5));
+      /*if(ind ===4){
+        ind = 0;
+      }*/  
     }
-
+    //ind = 0;
     for (let y = 0; y< h.length; y++) {
-      this.graphics.strokeText(colors[y], this.iX(9), this.iY(5 - y));
+      this.graphics.strokeText(colors[y], this.iX(13), this.iY(5 - y));
       this.graphics.fillStyle = colors[y];
-      this.graphics.fillRect(this.iX(8.5), this.iY(5 - y), 10, 10);
+      this.graphics.fillRect(this.iX(12.5), this.iY(5 - y), 10, 10);
+      /*ind++;
+      if(ind === 4){
+        ind = 0;
+      }*/    
     }
-    
   }
 
 }
