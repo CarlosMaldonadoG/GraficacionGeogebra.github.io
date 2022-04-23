@@ -1,12 +1,12 @@
 export class CanvasLocal {
     constructor(g, canvas) {
         this.graphics = g;
-        this.rWidth = 12;
-        this.rHeight = 12;
+        this.rWidth = 25;
+        this.rHeight = 14;
         this.maxX = canvas.width - 1;
         this.maxY = canvas.height - 1;
         this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
-        this.centerX = this.maxX / 12;
+        this.centerX = this.maxX / 25;
         this.centerY = this.maxY / 8 * 7;
     }
     iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
@@ -48,7 +48,7 @@ export class CanvasLocal {
         return res;
     }
     paint() {
-        let h = [27, 10, 16, 2, 50];
+        let h = [27, 10, 16, 2, 50, 25, 5, 30, 40, 46];
         let maxEsc;
         let xNum;
         let colors = ['magenta', 'red', 'green', 'yellow'];
@@ -87,11 +87,14 @@ export class CanvasLocal {
             }
         }
         cont = 0;
+        ind = 0;
         for (let y = 0; y < h.length; y++) {
-            this.graphics.strokeText(colors[cont], this.iX(xNum + 1), this.iY(5 - y));
+            this.graphics.strokeText(colors[cont], this.iX(xNum + 1), this.iY(8 - y));
+            this.graphics.strokeText(" " + h[ind] + " %", this.iX(xNum + 2.5), this.iY(8 - y));
             this.graphics.fillStyle = colors[cont];
-            this.graphics.fillRect(this.iX(xNum + 0.5), this.iY(5 - y), 10, 10);
+            this.graphics.fillRect(this.iX(xNum + 0.5), this.iY(8 - y), 10, 10);
             cont++;
+            ind++;
             if (cont === 4) {
                 cont = 0;
             }
