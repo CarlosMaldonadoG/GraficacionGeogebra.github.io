@@ -6,7 +6,7 @@ export class CanvasLocal {
         this.maxX = canvas.width - 1;
         this.maxY = canvas.height - 1;
         this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
-        this.centerX = this.maxX / 16;
+        this.centerX = this.maxX / 12;
         this.centerY = this.maxY / 8 * 7;
     }
     iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
@@ -48,11 +48,10 @@ export class CanvasLocal {
         return res;
     }
     paint() {
-        let h = [27, 10, 16, 2, 50, 33];
+        let h = [27, 10, 16, 2, 50];
         let maxEsc;
+        let xNum;
         let colors = ['magenta', 'red', 'green', 'yellow'];
-        let xLar = h.length * 2;
-        console.log(xLar);
         maxEsc = this.maxH(h);
         this.graphics.strokeStyle = 'black';
         this.drawLine(this.iX(0), this.iY(0), this.iX(8), this.iY(0));
@@ -66,23 +65,36 @@ export class CanvasLocal {
         }
         this.graphics.strokeStyle = 'black';
         let ind = 0;
-        let incremento = 8 / h.length;
-        for (let i = 0.5; i <= 12; i += 2) {
-            this.graphics.fillStyle = colors[ind];
+        let cont = 0;
+        xNum = h.length * 2;
+        for (let i = 0.5; i <= xNum; i += 2) {
+            this.graphics.fillStyle = colors[cont];
             this.drawLine(this.iX(i), this.iY(6 * h[ind] / maxEsc - 0.1), this.iX(i), this.iY(0));
             this.graphics.fillRect(this.iX(i), this.iY(6 * h[ind] / maxEsc - 0.1), this.iX(2) - this.iX(1), this.iY(0.2) - this.iY(6 * h[ind] / maxEsc));
             this.drawRmboide(this.iX(i + 0.3), this.iY(6 * h[ind] / maxEsc + 0.2), this.iX(i + 1.3), this.iY(6 * h[ind] / maxEsc + 0.2), this.iX(i + 1), this.iY(6 * h[ind] / maxEsc - 0.1), this.iX(i), this.iY(6 * h[ind] / maxEsc - 0.1), colors[ind]);
             this.drawRmboide(this.iX(i + 1), this.iY(6 * h[ind] / maxEsc - 0.1), this.iX(i + 1.3), this.iY(6 * h[ind] / maxEsc + 0.2), this.iX(i + 1.3), this.iY(0.4), this.iX(i + 1), this.iY(0.1), colors[ind]);
             ind++;
+            cont++;
+            if (cont === 4) {
+                cont = 0;
+            }
         }
-        ind = 0;
-        for (let x = 0; x < 8; x += 2) {
-            this.graphics.strokeText(colors[ind++], this.iX(x + 0.5), this.iY(-0.5));
+        cont = 0;
+        for (let x = 0; x < xNum; x += 2) {
+            this.graphics.strokeText(colors[cont++], this.iX(x + 0.5), this.iY(-0.5));
+            if (cont === 4) {
+                cont = 0;
+            }
         }
+        cont = 0;
         for (let y = 0; y < h.length; y++) {
-            this.graphics.strokeText(colors[y], this.iX(13), this.iY(5 - y));
-            this.graphics.fillStyle = colors[y];
-            this.graphics.fillRect(this.iX(12.5), this.iY(5 - y), 10, 10);
+            this.graphics.strokeText(colors[cont], this.iX(xNum + 1), this.iY(5 - y));
+            this.graphics.fillStyle = colors[cont];
+            this.graphics.fillRect(this.iX(xNum + 0.5), this.iY(5 - y), 10, 10);
+            cont++;
+            if (cont === 4) {
+                cont = 0;
+            }
         }
     }
 }
