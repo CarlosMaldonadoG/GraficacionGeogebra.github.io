@@ -53,12 +53,13 @@ export class CanvasLocal {
         let xNum;
         let colors = ['magenta', 'red', 'green', 'yellow'];
         maxEsc = this.maxH(h);
+        xNum = h.length * 2;
         this.graphics.strokeStyle = 'black';
-        this.drawLine(this.iX(0), this.iY(0), this.iX(8), this.iY(0));
+        this.drawLine(this.iX(0), this.iY(0), this.iX(xNum), this.iY(0));
         this.drawLine(this.iX(0), this.iY(0), this.iX(0), this.iY(6));
         let i = 0;
         for (let y = 0.6; y <= 6; y += 1.35) {
-            this.drawLine(this.iX(0.6), this.iY(y), this.iX(8), this.iY(y));
+            this.drawLine(this.iX(0.6), this.iY(y), this.iX(xNum), this.iY(y));
             this.drawLine(this.iX(0), this.iY(y - 0.6), this.iX(0.6), this.iY(y));
             this.graphics.strokeText((maxEsc * i / 4) + "", this.iX(-0.5), this.iY(y - 0.7));
             i++;
@@ -66,7 +67,6 @@ export class CanvasLocal {
         this.graphics.strokeStyle = 'black';
         let ind = 0;
         let cont = 0;
-        xNum = h.length * 2;
         for (let i = 0.5; i <= xNum; i += 2) {
             this.graphics.fillStyle = colors[cont];
             this.drawLine(this.iX(i), this.iY(6 * h[ind] / maxEsc - 0.1), this.iX(i), this.iY(0));
