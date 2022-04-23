@@ -7,7 +7,8 @@ export class CanvasLocal {
         this.maxY = canvas.height - 1;
         this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
         this.centerX = this.maxX / this.rWidth;
-        this.centerY = this.maxY / 8 * 7;
+        this.centerY = this.maxY / 8 * 6;
+        console.log(this.centerY);
     }
     iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
     iY(y) { return Math.round(this.centerY - y / this.pixelSize); }
@@ -28,9 +29,6 @@ export class CanvasLocal {
         this.graphics.closePath();
         this.graphics.stroke();
         this.graphics.fill();
-    }
-    fx(x) {
-        return Math.sin(x * 2.5);
     }
     maxH(h) {
         let max = h[0];
@@ -90,7 +88,7 @@ export class CanvasLocal {
         ind = 0;
         for (let y = 0; y < h.length; y++) {
             this.graphics.strokeText(colors[cont], this.iX(xNum + 1), this.iY(8 - y));
-            this.graphics.strokeText(" " + h[ind] + " %", this.iX(xNum + 2.5), this.iY(8 - y));
+            this.graphics.strokeText(" " + h[ind], this.iX(xNum + 2.5), this.iY(8 - y));
             this.graphics.fillStyle = colors[cont];
             this.graphics.fillRect(this.iX(xNum + 0.5), this.iY(8 - y), 10, 10);
             cont++;

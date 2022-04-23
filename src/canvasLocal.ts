@@ -9,8 +9,7 @@ export class CanvasLocal {
   protected pixelSize: number;
   protected centerX: number;
   protected centerY: number;
-  
-      
+        
   public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement, arrayTam : number){
     this.graphics = g;
     this.rWidth = (arrayTam * 2) + 5;
@@ -19,7 +18,8 @@ export class CanvasLocal {
     this.maxY = canvas.height - 1;
     this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
     this.centerX = this.maxX/this.rWidth;
-    this.centerY = this.maxY/8*7;
+    this.centerY = this.maxY/8*6;
+    console.log(this.centerY);
   }
 
   iX(x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
@@ -52,10 +52,6 @@ export class CanvasLocal {
     this.graphics.stroke();
     // Lo rellenamos
     this.graphics.fill();
-  }
-
-  fx(x:number):number {
-    return Math.sin(x*2.5);
   }
 
   maxH(h: number[]): number{
@@ -131,7 +127,7 @@ export class CanvasLocal {
     ind = 0;
     for (let y = 0; y< h.length; y++) {
       this.graphics.strokeText(colors[cont], this.iX(xNum + 1), this.iY(8 - y));
-      this.graphics.strokeText(" "+h[ind]+" %", this.iX(xNum + 2.5), this.iY(8 - y));
+      this.graphics.strokeText(" "+h[ind], this.iX(xNum + 2.5), this.iY(8 - y));
       this.graphics.fillStyle = colors[cont];
       this.graphics.fillRect(this.iX(xNum + 0.5), this.iY(8 - y), 10, 10);
       cont++;
@@ -141,5 +137,4 @@ export class CanvasLocal {
       }  
     }
   }
-
 }
