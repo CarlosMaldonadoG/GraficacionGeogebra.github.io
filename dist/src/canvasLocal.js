@@ -1,12 +1,12 @@
 export class CanvasLocal {
-    constructor(g, canvas) {
+    constructor(g, canvas, arrayTam) {
         this.graphics = g;
-        this.rWidth = 25;
+        this.rWidth = (arrayTam * 2) + 5;
         this.rHeight = 14;
         this.maxX = canvas.width - 1;
         this.maxY = canvas.height - 1;
         this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
-        this.centerX = this.maxX / 25;
+        this.centerX = this.maxX / this.rWidth;
         this.centerY = this.maxY / 8 * 7;
     }
     iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
@@ -47,8 +47,8 @@ export class CanvasLocal {
         res = Math.ceil(max / pot) * pot;
         return res;
     }
-    paint() {
-        let h = [27, 10, 16, 2, 50, 25, 5, 30, 40, 46];
+    paint(valores) {
+        let h = valores;
         let maxEsc;
         let xNum;
         let colors = ['magenta', 'red', 'green', 'yellow'];

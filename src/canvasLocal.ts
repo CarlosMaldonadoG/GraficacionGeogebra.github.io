@@ -11,14 +11,14 @@ export class CanvasLocal {
   protected centerY: number;
   
       
-  public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement){
+  public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement, arrayTam : number){
     this.graphics = g;
-    this.rWidth = 25;
+    this.rWidth = (arrayTam * 2) + 5;
     this.rHeight= 14;
     this.maxX = canvas.width - 1
     this.maxY = canvas.height - 1;
     this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
-    this.centerX = this.maxX/25;
+    this.centerX = this.maxX/this.rWidth;
     this.centerY = this.maxY/8*7;
   }
 
@@ -76,10 +76,11 @@ export class CanvasLocal {
     return res;
   }
 
-  paint() {
+  paint(valores : number[]) {
     //let h: number[] = [420, 100, 160, 20];
     //let h: number[] = [1150, 1780, 860, 1260];
-    let h: number[] = [27, 10, 16, 2, 50, 25, 5, 30,40,46];
+    //let h: number[] = [27, 10, 16, 2, 50, 25, 5, 30,40,46];
+    let h : number[] = valores;
     let maxEsc: number;
     let xNum : number;
     let colors: string[]= ['magenta', 'red', 'green', 'yellow'];
