@@ -8,3 +8,28 @@
 canvas{
   border: 3px solid black;
 }
+.tools{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.label-uno{
+  border: 0;
+  font-weight: bold;
+  border-bottom: 3px solid black;
+  margin: 10px;
+}
+.field-text{
+  width: 220px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: 10px;
+}
+#btn-valor{
+  width: 80px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 10px;
+}
