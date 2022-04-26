@@ -13,7 +13,7 @@ export class CanvasLocal {
         this.step = 0;
         this.blockSize = this.iX(1) - this.iX(0);
         this.juego = new Play(this.mallaSize);
-        this.juego.generaMatriz2();
+        this.juego.generaMatriz();
     }
     iX(x) { return Math.round(this.centerX + x / this.pixelSize); }
     iY(y) { return Math.round(this.centerY - y / this.pixelSize); }

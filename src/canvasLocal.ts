@@ -29,7 +29,7 @@ export class CanvasLocal {
     
     this.blockSize = this.iX(1) - this.iX(0);
     this.juego = new Play(this.mallaSize);
-		this.juego.generaMatriz2();
+		this.juego.generaMatriz();
   }
 
   iX(x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
