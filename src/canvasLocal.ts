@@ -17,7 +17,7 @@ export class CanvasLocal {
   
   public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement){
     this.graphics = g;
-    this.mallaSize = 40;
+    this.mallaSize = 50;
     this.rWidth = this.mallaSize*1.33;
     this.rHeight= this.mallaSize;
     this.maxX = canvas.width - 1
