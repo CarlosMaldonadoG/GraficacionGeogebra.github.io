@@ -17,7 +17,7 @@ export class CanvasLocal {
   
   public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement){
     this.graphics = g;
-    this.mallaSize = 50;
+    this.mallaSize = 40;
     this.rWidth = this.mallaSize*1.33;
     this.rHeight= this.mallaSize;
     this.maxX = canvas.width - 1
@@ -42,10 +42,6 @@ export class CanvasLocal {
     this.graphics.closePath();
     this.graphics.stroke();
   }
-
-  fx(x:number):number {
-    return Math.sin(x*2.5);
-  }
   
   getGraphics(): CanvasRenderingContext2D{
     return this.graphics;
@@ -58,13 +54,7 @@ export class CanvasLocal {
     this.graphics.fillStyle = 'white';
     this.graphics.fillRect(0, 0, this.maxX, this.maxY);
     this.graphics.strokeStyle = 'lightgray';
-   /* for (let x = 0; x <= this.mallaSize; x++){
-      this.drawLine(this.iX(x), this.iY(0), this.iX(x), this.iY(this.mallaSize));
-    }
-    for (let y = 0; y <= this.mallaSize; y++){
-      this.drawLine(this.iX(0), this.iY(y), this.iX(this.mallaSize), this.iY(y));
-    }*/
-    
+     
     //trazar el juego (los cuadritos) a partir de la matriz creada
     res = this.juego.getMat();
     this.graphics.fillStyle = 'black';

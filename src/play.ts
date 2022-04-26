@@ -37,6 +37,13 @@ class Game{
 			if(vec===3 || vec===2)
 				l=1;
 		}
+        /*if(cel === 0 && vec === 3){
+            l = 1;
+        }else if(cel === 1 && (vec < 2 || vec > 3)){
+            l = 0;
+        }else{
+            l = cel;
+        }*/
 		return l;	
 	}
 }

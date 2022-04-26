@@ -7,4 +7,4 @@ const miCanvas = new CanvasLocal(graphics, canvas);
 function animate() {
     miCanvas.paint();
 }
-setInterval(animate, 100);
+setInterval(animate, 50);

@@ -2,7 +2,7 @@ import { Play } from "./play.js";
 export class CanvasLocal {
     constructor(g, canvas) {
         this.graphics = g;
-        this.mallaSize = 50;
+        this.mallaSize = 40;
         this.rWidth = this.mallaSize * 1.33;
         this.rHeight = this.mallaSize;
         this.maxX = canvas.width - 1;
@@ -23,9 +23,6 @@ export class CanvasLocal {
         this.graphics.lineTo(x2, y2);
         this.graphics.closePath();
         this.graphics.stroke();
-    }
-    fx(x) {
-        return Math.sin(x * 2.5);
     }
     getGraphics() {
         return this.graphics;

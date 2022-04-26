@@ -14,4 +14,4 @@ function animate() {
     miCanvas.paint();
 }
 
-setInterval(animate, 100);
+setInterval(animate, 50);
