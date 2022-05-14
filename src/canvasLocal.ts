@@ -28,6 +28,7 @@ export class CanvasLocal {
     this.step = 0;
     
     this.blockSize = this.iX(1) - this.iX(0);
+    //this.blockSize = 30;
     this.juego = new Play(this.mallaSize);
 		this.juego.generaMatriz();
   }
@@ -53,15 +54,15 @@ export class CanvasLocal {
     //dibuja la cuadricula
     this.graphics.fillStyle = 'white';
     this.graphics.fillRect(0, 0, this.maxX, this.maxY);
-    this.graphics.strokeStyle = 'lightgray';
-     
+    this.graphics.strokeStyle = 'lightgray'; 
+
     //trazar el juego (los cuadritos) a partir de la matriz creada
     res = this.juego.getMat();
     this.graphics.fillStyle = 'black';
 		for(let i=0; i<this.mallaSize; i++){
 			for(let j=0;j<this.mallaSize; j++){	 
         if (res[i][j] == 1)
-          this.graphics.fillRect(this.iX(i), this.iY(j), this.blockSize, this.blockSize);
+            this.graphics.fillRect(this.iX(i), this.iY(j), this.blockSize, this.blockSize);
       }
     }
     //actualizar la matriz para la siguiente pasada
