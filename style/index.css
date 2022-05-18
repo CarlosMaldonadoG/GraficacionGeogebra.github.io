@@ -5,18 +5,3 @@
 #footer a{
   color: #FFFFFF;
 }
-canvas{
-  border: 3px solid black;
-}
-button{
-  width: 100px;
-  height: 30px;
-  border: 2px solid black;
-  border-radius: 6px;
-  margin: 10px;
-}
-.tools{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
