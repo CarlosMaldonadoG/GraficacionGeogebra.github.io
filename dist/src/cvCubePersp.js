@@ -1,5 +1,5 @@
 import { CanvasLocal } from './canvasLocal.js';
-import { Obj } from './obj.js';
+import { Obj } from "./obj.js";
 export class CvCubePersp extends CanvasLocal {
     constructor(g, canvas) {
         super(g, canvas);
