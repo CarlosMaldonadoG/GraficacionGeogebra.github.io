@@ -28,10 +28,11 @@ export class CvCubePersp extends CanvasLocal{
       this.obj.d = this.obj.rho * this.pixelSize / this.obj.objSize;
       this.obj.eyeAndScreen();
        // Horizontal edges at the bottom:
-      this.line( 0, 1); this.line(1, 2); this.line(2, 3); this.line(3, 0);
+      this.line( 0, 1); this.line(1, 3); this.line(2, 3); this.line(0, 2);
        // Horizontal edges at the top:
-      this.line(4, 5); this.line(5, 6); this.line(6, 7); this.line(7, 4);
+      this.line(4, 5); this.line(5, 7); this.line(6, 7); this.line(4, 6);
        // Vertical edges:
+     
       this.line( 0, 4); this.line(1, 5); this.line(2, 6); this.line(3, 7);
   }
 }

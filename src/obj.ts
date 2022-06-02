@@ -13,18 +13,18 @@ export class Obj {
       //w = new Point3D[8];
       this.w = new Array<Point3D>(8);
       this.vScr = new Array<Point2D>(8);
-      for(let x = 0; x < 10 ; x++){
+      //for(let x = 0; x < 10 ; x++){
          // Bottom surface:
-         this.w[0] = new Point3D( 1, -1, -1);
-         this.w[1] = new Point3D( 1,   1, -1);
-         this.w[2] = new Point3D(-1,   1, -1);
-         this.w[3] = new Point3D(-1, -1, -1);
+        /* this.w[0] = new Point3D( 0, 0, 0);
+         this.w[1] = new Point3D( 0,   1, 0);
+         this.w[2] = new Point3D(1,   0, 0);
+         this.w[3] = new Point3D(1, 1, 0);
          // Top surface:
-         this.w[4] = new Point3D( 1, -1,   1);
-         this.w[5] = new Point3D( 1,   1,   1);
-         this.w[6] = new Point3D(-1,   1,   1);
-         this.w[7] = new Point3D(-1, -1, 1); 
-      }
+         this.w[4] = new Point3D(0, 0,   1);
+         this.w[5] = new Point3D(0,   1,   1);
+         this.w[6] = new Point3D(1,   0,   1);
+         this.w[7] = new Point3D(1, 1, 1);*/ 
+      //}
       
 
       this.objSize = Math.sqrt (12);
