@@ -1,11 +1,11 @@
 import { Obj3D } from './Obj3D.js';
 import { CvWireframe } from './CvWireFrame.js';
-let canvas;
-let graphics;
+var canvas;
+var graphics;
 canvas = document.getElementById('circlechart');
 graphics = canvas.getContext('2d');
-let cv;
-let obj;
+var cv;
+var obj;
 function leerArchivo(e) {
     var archivo = e.target.files[0];
     if (!archivo) {
@@ -17,6 +17,7 @@ function leerArchivo(e) {
         mostrarContenido(contenido);
         obj = new Obj3D();
         if (obj.read(contenido)) {
+            //sDir = sDir1;
             cv = new CvWireframe(graphics, canvas);
             cv.setObj(obj);
             cv.paint();
@@ -26,10 +27,13 @@ function leerArchivo(e) {
 }
 function mostrarContenido(contenido) {
     var elemento = document.getElementById('contenido-archivo');
+    //
+    //readObject(new Input(contenido));
     elemento.innerHTML = contenido;
 }
 function readObject(inp) {
-    let i = inp.readInt();
+    //for (; ;) {
+    var i = inp.readInt();
     console.log(i);
     i = inp.readInt();
     console.log(i);
@@ -37,11 +41,12 @@ function readObject(inp) {
     console.log(i);
     i = inp.readInt();
     console.log(i);
+    //}
 }
 function vp(dTheta, dPhi, fRho) {
     if (obj != undefined) {
-        let obj = cv.getObj();
-        if (!obj.vp(cv, dTheta, dPhi, fRho))
+        var obj_1 = cv.getObj();
+        if (!obj_1.vp(cv, dTheta, dPhi, fRho))
             alert('datos no validos');
     }
     else

@@ -1,4 +1,4 @@
-import { CvCubePersp } from './cvCubePersp.js';
+//import { CvCubePersp } from './cvCubePersp.js';
 import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
 import { Canvas3D } from './Canvas3D.js';
