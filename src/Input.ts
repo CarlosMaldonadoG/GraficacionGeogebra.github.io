@@ -31,7 +31,7 @@ export class Input
     return (ch.trim()=="");
   }
   isEnter(ch:string):boolean {
-    return (ch=='\n');
+    return (ch=='\n' || ch=='\r');
   }
 
   isDigit(ch: string): boolean{
