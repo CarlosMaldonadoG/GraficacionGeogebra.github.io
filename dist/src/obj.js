@@ -6,14 +6,16 @@ export class Obj {
         this.phi = 1.3;
         this.w = new Array(8);
         this.vScr = new Array(8);
-        this.w[0] = new Point3D(1, -1, -1);
-        this.w[1] = new Point3D(1, 1, -1);
-        this.w[2] = new Point3D(-1, 1, -1);
-        this.w[3] = new Point3D(-1, -1, -1);
-        this.w[4] = new Point3D(1, -1, 1);
-        this.w[5] = new Point3D(1, 1, 1);
-        this.w[6] = new Point3D(-1, 1, 1);
-        this.w[7] = new Point3D(-1, -1, 1);
+        for (let x = 0; x < 10; x++) {
+            this.w[0] = new Point3D(1, -1, -1);
+            this.w[1] = new Point3D(1, 1, -1);
+            this.w[2] = new Point3D(-1, 1, -1);
+            this.w[3] = new Point3D(-1, -1, -1);
+            this.w[4] = new Point3D(1, -1, 1);
+            this.w[5] = new Point3D(1, 1, 1);
+            this.w[6] = new Point3D(-1, 1, 1);
+            this.w[7] = new Point3D(-1, -1, 1);
+        }
         this.objSize = Math.sqrt(12);
         this.rho = 5 * this.objSize;
     }
