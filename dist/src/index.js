@@ -11,6 +11,7 @@ graphics = canvas.getContext('2d');
 var cv;
 var obj;
 var ang = 0;
+var intTiempo;
 function leerArchivo(e) {
     var archivo = e.target.files[0];
     if (!archivo) {
@@ -72,6 +73,12 @@ function pza1DerFunc() {
     cv.setObj(obj);
     cv.paint();
 }
+function iniAnimacion() {
+    intTiempo = setInterval(pza1DerFunc, 90);
+}
+function pauAnimacion() {
+    clearInterval(intTiempo);
+}
 /*
 function pza1IzqFunc() {
   let af = -10;
@@ -122,8 +129,10 @@ document.getElementById('eyeRight').addEventListener('click', eyeRightFunc, fals
 document.getElementById('incrDist').addEventListener('click', incrDistFunc, false);
 document.getElementById('decrDist').addEventListener('click', decrDistFunc, false);
 //movimiento de piezas
+document.getElementById('pza1Izq').addEventListener('click', iniAnimacion, false);
+document.getElementById('pza1Der').addEventListener('click', pauAnimacion, false);
 //document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false);
-document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
+//document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
 //document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
 //document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
 var Pix, Piy;
