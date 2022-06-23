@@ -81,15 +81,15 @@ function decrDistFunc() {
 function pza1DerFunc() {
   let af = 10;
  	
-	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
+	Rota3D.initRotate( obj.w[253], obj.w[254], af*Math.PI/180);	
 	
-  for (let i = 201; i <= 238; i++){
+  for (let i = 1; i <= 252; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
   cv.paint();	
 }
-
+/*
 function pza1IzqFunc() {
   let af = -10;
  	
@@ -130,7 +130,7 @@ function pza12IzqFunc() {
   
 	cv.setObj(obj);
   cv.paint();	
-}
+}*/
 
 document.getElementById('file-input').addEventListener('change', leerArchivo, false);
 document.getElementById('eyeDown').addEventListener('click', eyeDownFunc, false);
@@ -142,10 +142,10 @@ document.getElementById('decrDist').addEventListener('click', decrDistFunc, fals
 
 
 //movimiento de piezas
-document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false);
+//document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false);
 document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
-document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
-document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
+//document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
+//document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
 
 let Pix: number, Piy: number;
 let Pfx: number, Pfy: number;
