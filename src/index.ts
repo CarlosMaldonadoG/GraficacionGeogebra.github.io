@@ -80,11 +80,11 @@ function decrDistFunc() {
   vp(0, 0, 0.5);
 }
 function pza1DerFunc() {
-  let af = 10;
+  let af = 2;
  	
 	//Rota3D.initRotate( obj.w[253], obj.w[254], af*Math.PI/180);	
 	//Rota3D.initRotate( obj.w[21], obj.w[22], af*Math.PI/180);	
-	Rota3D.initRotate( obj.w[1665], obj.w[1666], af*Math.PI/180);	
+	Rota3D.initRotate( obj.w[433], obj.w[433], af*Math.PI/180);	
 	
   /*for (let i = 1; i <= 252; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
@@ -92,7 +92,7 @@ function pza1DerFunc() {
 	/*for (let i = 1; i <= 20; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}*/
-	for (let i = 800; i <= 1663; i++){
+	for (let i = 1; i <= 432; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
  cv.setObj(obj);
@@ -157,7 +157,7 @@ document.getElementById('decrDist').addEventListener('click', decrDistFunc, fals
 
 
 //movimiento de piezas
-document.getElementById('pza1Izq').addEventListener('click', iniAnimacion, false);
+document.getElementById('pza1Izq').addEventListener('click',iniAnimacion, false);
 document.getElementById('pza1Der').addEventListener('click', pauAnimacion, false);
 //document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false);
 //document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
