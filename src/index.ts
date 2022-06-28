@@ -17,6 +17,7 @@ let cv: CvHLines;
 let obj: Obj3D;
 let ang: number=0;
 let intTiempo : number;
+let intTimer : number;
 
 
 function leerArchivo(e:any) {
@@ -79,20 +80,23 @@ function incrDistFunc() {
 function decrDistFunc() {
   vp(0, 0, 0.5);
 }
-function pza1DerFunc() {
+function pza1IzqFunc() {
   let af = 2;
  	
-	//Rota3D.initRotate( obj.w[253], obj.w[254], af*Math.PI/180);	
-	//Rota3D.initRotate( obj.w[21], obj.w[22], af*Math.PI/180);	
+	Rota3D.initRotate( obj.w[1081], obj.w[1081], af*Math.PI/180);	
+	
+  for (let i = 901; i <= 1080; i++){
+    obj.w[i] = Rota3D.rotate(obj.w[i]);
+	}
+	cv.setObj(obj);
+  cv.paint();	
+}
+function pza1DerFunc() {
+  let af = -2;
+ 	
 	Rota3D.initRotate( obj.w[433], obj.w[433], af*Math.PI/180);	
 	
-  /*for (let i = 1; i <= 252; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}*/
-	/*for (let i = 1; i <= 20; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}*/
-	for (let i = 1; i <= 432; i++){
+  for (let i = 1; i <= 432; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
  cv.setObj(obj);
@@ -100,22 +104,13 @@ function pza1DerFunc() {
 }
 function iniAnimacion(){
   intTiempo = setInterval(pza1DerFunc, 90);
+  intTimer = setInterval(pza1IzqFunc, 90)
 }
 function pauAnimacion(){
   clearInterval(intTiempo);
+  clearInterval(intTimer);
 }
 /*
-function pza1IzqFunc() {
-  let af = -10;
- 	
-	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
-	
-  for (let i = 201; i <= 238; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-	}
-	cv.setObj(obj);
-  cv.paint();	
-}
 function pza12DerFunc() {
   let af = 10;
   console.log(obj.w[29], obj.w[30], obj.w[6]);
