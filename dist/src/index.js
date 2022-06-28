@@ -68,14 +68,14 @@ function pza1DerFunc() {
     var af = 10;
     //Rota3D.initRotate( obj.w[253], obj.w[254], af*Math.PI/180);	
     //Rota3D.initRotate( obj.w[21], obj.w[22], af*Math.PI/180);	
-    Rota3D.initRotate(obj.w[1664], obj.w[1665], af * Math.PI / 180);
+    Rota3D.initRotate(obj.w[1665], obj.w[1665], af * Math.PI / 180);
     /*for (let i = 1; i <= 252; i++){
       obj.w[i] = Rota3D.rotate(obj.w[i]);
       }*/
     /*for (let i = 1; i <= 20; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
     }*/
-    for (var i = 800; i <= 1663; i++) {
+    for (var i = 1232; i <= 1447; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     cv.setObj(obj);
