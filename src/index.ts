@@ -18,7 +18,7 @@ let obj: Obj3D;
 let ang: number=0;
 let intTiempo : number;
 let intTimer : number;
-
+let timer : number;
 
 function leerArchivo(e:any) {
   var archivo = e.target.files[0];
@@ -82,8 +82,9 @@ function decrDistFunc() {
 }
 function pza1IzqFunc() {
   let af = 2;
- 	
-	Rota3D.initRotate( obj.w[1081], obj.w[1081], af*Math.PI/180);	
+ 	timer = af*Math.PI/180;
+  console.log(timer);
+	Rota3D.initRotate( obj.w[1081], obj.w[1081], timer);	
 	
   for (let i = 901; i <= 1080; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
@@ -91,7 +92,7 @@ function pza1IzqFunc() {
 	cv.setObj(obj);
   cv.paint();	
 }
-function pza1DerFunc() {
+/*function pza1DerFunc() {
   let af = -2;
  	
 	Rota3D.initRotate( obj.w[433], obj.w[433], af*Math.PI/180);	
@@ -101,13 +102,13 @@ function pza1DerFunc() {
 	}
  cv.setObj(obj);
   cv.paint();	
-}
+}*/
 function iniAnimacion(){
-  intTiempo = setInterval(pza1DerFunc, 90);
+  //intTiempo = setInterval(pza1DerFunc, 90);
   intTimer = setInterval(pza1IzqFunc, 90)
 }
 function pauAnimacion(){
-  clearInterval(intTiempo);
+  //clearInterval(intTiempo);
   clearInterval(intTimer);
 }
 /*
