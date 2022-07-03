@@ -70,8 +70,8 @@ function pza1IzqFunc() {
     var af = 2;
     timer = af * Math.PI / 180;
     console.log(timer);
-    Rota3D.initRotate(obj.w[1081], obj.w[1081], timer);
-    for (var i = 901; i <= 1080; i++) {
+    Rota3D.initRotate(obj.w[41], obj.w[41], timer);
+    for (var i = 1; i <= 40; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     cv.setObj(obj);
