@@ -66,20 +66,20 @@ function incrDistFunc() {
 function decrDistFunc() {
     vp(0, 0, 0.5);
 }
-function pza1IzqFunc() {
+function engraTreintaSeis() {
     var af = -6;
-    timer = af * Math.PI / 180;
-    console.log(timer);
-    Rota3D.initRotate(obj.w[865], obj.w[866], timer);
+    Rota3D.initRotate(obj.w[865], obj.w[866], -26.1666666666666667);
     for (var i = 1; i <= 864; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     cv.setObj(obj);
     cv.paint();
 }
-function pza1DerFunc() {
+function engraTreinta() {
     var af = 6;
-    Rota3D.initRotate(obj.w[1621], obj.w[1622], af * Math.PI / 180);
+    //
+    //Rota3D.initRotate( obj.w[1621], obj.w[1622], af*Math.PI/180);	
+    Rota3D.initRotate(obj.w[1621], obj.w[1622], 31.4);
     for (var i = 901; i <= 1620; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
@@ -87,8 +87,8 @@ function pza1DerFunc() {
     cv.paint();
 }
 function iniAnimacion() {
-    intTiempo = setInterval(pza1DerFunc, 300);
-    intTimer = setInterval(pza1IzqFunc, 250);
+    intTiempo = setInterval(engraTreinta, 1000);
+    intTimer = setInterval(engraTreintaSeis, 1000);
 }
 function pauAnimacion() {
     clearInterval(intTiempo);
