@@ -67,7 +67,7 @@ function decrDistFunc() {
     vp(0, 0, 0.5);
 }
 function pza1IzqFunc() {
-    var af = 2;
+    var af = -6;
     timer = af * Math.PI / 180;
     console.log(timer);
     Rota3D.initRotate(obj.w[865], obj.w[866], timer);
@@ -78,7 +78,7 @@ function pza1IzqFunc() {
     cv.paint();
 }
 function pza1DerFunc() {
-    var af = -2;
+    var af = 6;
     Rota3D.initRotate(obj.w[1621], obj.w[1622], af * Math.PI / 180);
     for (var i = 901; i <= 1620; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
@@ -87,8 +87,8 @@ function pza1DerFunc() {
     cv.paint();
 }
 function iniAnimacion() {
-    intTiempo = setInterval(pza1DerFunc, 90);
-    intTimer = setInterval(pza1IzqFunc, 90);
+    intTiempo = setInterval(pza1DerFunc, 300);
+    intTimer = setInterval(pza1IzqFunc, 250);
 }
 function pauAnimacion() {
     clearInterval(intTiempo);
