@@ -70,30 +70,28 @@ function pza1IzqFunc() {
     var af = 2;
     timer = af * Math.PI / 180;
     console.log(timer);
-    Rota3D.initRotate(obj.w[41], obj.w[41], timer);
-    for (var i = 1; i <= 40; i++) {
+    Rota3D.initRotate(obj.w[865], obj.w[866], timer);
+    for (var i = 1; i <= 864; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     cv.setObj(obj);
     cv.paint();
 }
-/*function pza1DerFunc() {
-  let af = -2;
-    
-    Rota3D.initRotate( obj.w[433], obj.w[433], af*Math.PI/180);
-    
-  for (let i = 1; i <= 432; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
+function pza1DerFunc() {
+    var af = -2;
+    Rota3D.initRotate(obj.w[1621], obj.w[1622], af * Math.PI / 180);
+    for (var i = 901; i <= 1620; i++) {
+        obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
- cv.setObj(obj);
-  cv.paint();
-}*/
+    cv.setObj(obj);
+    cv.paint();
+}
 function iniAnimacion() {
-    //intTiempo = setInterval(pza1DerFunc, 90);
+    intTiempo = setInterval(pza1DerFunc, 90);
     intTimer = setInterval(pza1IzqFunc, 90);
 }
 function pauAnimacion() {
-    //clearInterval(intTiempo);
+    clearInterval(intTiempo);
     clearInterval(intTimer);
 }
 /*
