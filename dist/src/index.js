@@ -1,7 +1,4 @@
-//import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
-//import { Canvas3D } from './Canvas3D.js';
-//import { CvWireframe } from './CvWireFrame.js';
 import { CvHLines } from './CvHLines.js';
 import { Rota3D } from './Rota3D.js';
 var canvas;
@@ -67,7 +64,6 @@ function decrDistFunc() {
     vp(0, 0, 0.5);
 }
 function engraTreintaSeis() {
-    var af = -6;
     Rota3D.initRotate(obj.w[865], obj.w[866], -26.1666666666666667);
     for (var i = 1; i <= 864; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
@@ -76,9 +72,6 @@ function engraTreintaSeis() {
     cv.paint();
 }
 function engraTreinta() {
-    var af = 6;
-    //
-    //Rota3D.initRotate( obj.w[1621], obj.w[1622], af*Math.PI/180);	
     Rota3D.initRotate(obj.w[1621], obj.w[1622], 31.4);
     for (var i = 901; i <= 1620; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
@@ -87,44 +80,13 @@ function engraTreinta() {
     cv.paint();
 }
 function iniAnimacion() {
-    intTiempo = setInterval(engraTreinta, 1000);
-    intTimer = setInterval(engraTreintaSeis, 1000);
+    intTiempo = setInterval(engraTreinta, 100);
+    intTimer = setInterval(engraTreintaSeis, 100);
 }
 function pauAnimacion() {
     clearInterval(intTiempo);
     clearInterval(intTimer);
 }
-/*
-function pza12DerFunc() {
-  let af = 10;
-  console.log(obj.w[29], obj.w[30], obj.w[6]);
-  Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
-    
-  for (let i = 101; i <= 140; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-  }
-  for (let i = 201; i <= 238; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-    }
-    cv.setObj(obj);
-  cv.paint();
-}
-
-function pza12IzqFunc() {
-  let af = -10;
-  console.log(obj.w[29], obj.w[30]);
-    Rota3D.initRotate( obj.w[29], obj.w[30], af*Math.PI/180);
-    
-  for (let i = 101; i <= 140; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-    }
-  for (let i = 201; i <= 238; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-    }
-  
-    cv.setObj(obj);
-  cv.paint();
-}*/
 document.getElementById('file-input').addEventListener('change', leerArchivo, false);
 document.getElementById('eyeDown').addEventListener('click', eyeDownFunc, false);
 document.getElementById('eyeUp').addEventListener('click', eyeUpFunc, false);
@@ -135,10 +97,6 @@ document.getElementById('decrDist').addEventListener('click', decrDistFunc, fals
 //movimiento de piezas
 document.getElementById('pza1Izq').addEventListener('click', iniAnimacion, false);
 document.getElementById('pza1Der').addEventListener('click', pauAnimacion, false);
-//document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false);
-//document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
-//document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
-//document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
 var Pix, Piy;
 var Pfx, Pfy;
 var theta = 0.3, phi = 1.3, SensibilidadX = 0.02, SensibilidadY = 0.02;

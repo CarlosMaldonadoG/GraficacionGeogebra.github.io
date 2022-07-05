@@ -1,4 +1,3 @@
-import { Canvas3D } from './Canvas3D.js';
 import { Obj3D } from './Obj3D.js';
 import { Point2D } from './point2D.js';
 import { Dimension } from './Dimension.js';
